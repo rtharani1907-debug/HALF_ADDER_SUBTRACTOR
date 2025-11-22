@@ -63,12 +63,26 @@ module half_adder (
     assign carry = a & b;   // AND for carry
 
 endmodule
+module half_subtractor (
+    input  wire a, b,         // Inputs
+    output wire diff, borrow  // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b;     // XOR for difference
+    assign borrow = ~a & b;    // Borrow when a < b
+
+endmodule
 ```
 Developed by: Tharani Rameshbabu  RegisterNumber: 25018409
 
 **RTL Schematic**
 ![alt text](<Screenshot (114).png>)
+<img width="1920" height="1080" alt="Screenshot (126)" src="https://github.com/user-attachments/assets/d8d2378e-d83e-406e-b31c-8d6622f96845" />
+
 **Output/TIMING Waveform**
 ![alt text](<Screenshot (115).png>)
+<img width="1920" height="1080" alt="Screenshot (127)" src="https://github.com/user-attachments/assets/14268e34-e441-4d15-9971-bb0f3bdb85e6" />
+
 **Result:**
  Thus, the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
